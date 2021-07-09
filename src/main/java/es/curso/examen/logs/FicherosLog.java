@@ -5,8 +5,10 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class FicherosLog {
 	
+
 	public static void grabarLog(String linea, String path) {
 		// Graba linea en un fichero de log, lo va añadiendo al final
 		// Registra la fecha y la hora.

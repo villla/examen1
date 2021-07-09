@@ -1,10 +1,18 @@
 package es.curso.examen.modelo;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Empleado {
 
+	@Value("2")
 	private int codigo;
+	@Value("Juan")
 	private String nombre;
+	@Value("Cap")
 	private String empresa;
+	@Value("Senior")
 	private String perfil;
 	
 	

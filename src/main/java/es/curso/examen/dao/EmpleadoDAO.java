@@ -1,7 +1,10 @@
 package es.curso.examen.dao;
 
+import org.springframework.stereotype.Component;
+
 import es.curso.examen.modelo.Empleado;
 
+@Component("dao")
 public class EmpleadoDAO implements IEmpleadoDAO {
 
 	@Override

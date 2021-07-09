@@ -1,3 +1,6 @@
-07/07/2021 17:52:40.906	contenido de la linea de log
-07/07/2021 17:52:40.907	Otra linea de log
-07/07/2021 17:52:40.908	Una tercera linea de log
+09/07/2021 09:56:48.494	contenido de la linea de log
+09/07/2021 09:56:48.505	Otra linea de log
+09/07/2021 09:56:48.506	Una tercera linea de log
+09/07/2021 10:02:27.611	contenido de la linea de log
+09/07/2021 10:02:27.612	Otra linea de log
+09/07/2021 10:02:27.613	Una tercera linea de log

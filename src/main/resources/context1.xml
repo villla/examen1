@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean id="empleado1" class="es.curso.examen.modelo.Empleado"
+	p:codigo="1" p:empresa="CAP" p:nombre="Ana" p:perfil="Junior"
+	></bean>
+	
+	<bean id="dao" class="es.curso.examen.dao.EmpleadoDAO"/>
+	
+	<bean id="inter" class="es.curso.examen.logs.Interceptor" p:path="src/logs/mi_log_xml.txt"></bean>
+	
+	<aop:config>
+		<aop:aspect ref="inter">
+			<aop:pointcut expression="execution(* es.curso.examen.dao.IEmpleadoDAO.create(..)) and args(e)" id="pc"/>
+			<aop:after-returning method="createdUser" arg-names="e" pointcut-ref="pc"/>
+			<aop:after-returning method="updatedUser" arg-names="e" pointcut="execution(* es.curso.examen.dao.IEmpleadoDAO.update(..)) and args(e)"/>
+			<aop:after-returning method="deletedUser" arg-names="codigo" pointcut="execution(* es.curso.examen.dao.IEmpleadoDAO.delete(..)) and args(codigo)"/>
+		</aop:aspect>
+	</aop:config>
+
+</beans>
